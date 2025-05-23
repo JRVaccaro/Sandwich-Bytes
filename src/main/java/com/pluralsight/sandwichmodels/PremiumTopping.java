@@ -1,4 +1,4 @@
 package com.pluralsight.sandwichmodels;
 
-public class PremiumTopping {
+public abstract class PremiumTopping extends Toppings{
 }

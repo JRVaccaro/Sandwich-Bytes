@@ -1,4 +1,6 @@
 package com.pluralsight.sandwichmodels;
 
-public class Item {
+import com.pluralsight.interfaces.Priceable;
+
+public abstract class Item implements Priceable {
 }

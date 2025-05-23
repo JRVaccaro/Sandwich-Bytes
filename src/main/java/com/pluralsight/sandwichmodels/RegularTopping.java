@@ -1,4 +1,4 @@
 package com.pluralsight.sandwichmodels;
 
-public class RegularTopping {
+public class RegularTopping extends Toppings{
 }

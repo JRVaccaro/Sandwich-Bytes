@@ -1,4 +1,4 @@
 package com.pluralsight.sandwichmodels;
 
-public class Chips {
+public class Chips extends Item{
 }

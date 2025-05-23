@@ -1,4 +1,4 @@
 package com.pluralsight.sandwichmodels;
 
-public class Meat {
+public class Meat extends PremiumTopping{
 }
