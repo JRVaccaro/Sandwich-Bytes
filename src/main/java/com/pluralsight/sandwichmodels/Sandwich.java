@@ -51,7 +51,7 @@ public class Sandwich extends Item {
         this.toppings = toppings;
     }
 
-    public boolean isHasExtraCheese() {
+    public boolean hasExtraCheese() {
         return hasExtraCheese;
     }
 
@@ -59,7 +59,7 @@ public class Sandwich extends Item {
         this.hasExtraCheese = hasExtraCheese;
     }
 
-    public boolean isHasExtraMeat() {
+    public boolean hasExtraMeat() {
         return hasExtraMeat;
     }
 
