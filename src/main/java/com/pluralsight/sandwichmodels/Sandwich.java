@@ -2,15 +2,15 @@ package com.pluralsight.sandwichmodels;
 
 import java.util.List;
 
-public class Sandwich extends Item  {
-    private String size;
+public class Sandwich extends Item {
+    private int size;
     private Bread bread;
     private boolean isToasted;
     private List<Toppings> toppings;
     private boolean hasExtraCheese;
     private boolean hasExtraMeat;
 
-    public Sandwich(String size, Bread bread, boolean isToasted, List<Toppings> toppings, boolean hasExtraCheese, boolean hasExtraMeat) {
+    public Sandwich(int size, Bread bread, boolean isToasted, List<Toppings> toppings, boolean hasExtraCheese, boolean hasExtraMeat) {
         this.size = size;
         this.bread = bread;
         this.isToasted = isToasted;
@@ -19,11 +19,11 @@ public class Sandwich extends Item  {
         this.hasExtraMeat = hasExtraMeat;
     }
 
-    public String getSize() {
+    public int getSize() {
         return size;
     }
 
-    public void setSize(String size) {
+    public void setSize(int size) {
         this.size = size;
     }
 
@@ -69,6 +69,67 @@ public class Sandwich extends Item  {
 
     @Override
     public double getPrice() {
+        double basePrice;
+
+        //Set base price depending on sandwich size
+        switch (size) {
+            case 4:
+                basePrice = 5.50;
+                break;
+
+            case 8:
+                basePrice = 7.00;
+                break;
+
+            case 12:
+                basePrice = 8.50;
+                break;
+
+            default:
+                basePrice = 0; //Default- for invalid size
+
+        }
+                //Add extra cost if sandwich has extra cheese
+                if (hasExtraCheese) {
+
+
+                    switch (size) {
+                        case 4:
+                            basePrice += 0.30;
+                            break;
+
+                        case 8:
+                            basePrice += 0.60;
+                            break;
+
+                        case 12:
+                            basePrice += 0.90;
+                            break;
+                    }
+
+                }
+                //Add extra cost if sandwich has extra meat
+                if (hasExtraMeat) {
+
+                    switch (size) {
+                        case 4:
+                            basePrice += 0.50;
+                            break;
+
+                        case 8:
+                            basePrice += 1.00;
+                            break;
+
+                        case 12:
+                            basePrice += 1.50;
+                            break;
+                    }
+                }
+                //Adds the prices of all other toppings that are in the sandwich
+                for (Toppings topping: toppings){
+                    basePrice += topping.getPrice();
+                }
+                return basePrice;
+        }
 
     }
-}
