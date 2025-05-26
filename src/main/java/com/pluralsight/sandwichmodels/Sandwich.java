@@ -86,7 +86,7 @@ public class Sandwich extends Item {
                 break;
 
             default:
-                basePrice = 0; //Default- for invalid size
+                throw new IllegalStateException("Invalid sandwich size.");
 
         }
                 //Add extra cost if sandwich has extra cheese
