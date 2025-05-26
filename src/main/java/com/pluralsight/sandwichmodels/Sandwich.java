@@ -143,7 +143,27 @@ public class Sandwich extends Item {
                     case 12:
                         basePrice += 2.25;
                 }
-            } else {
+
+            }
+            //Checking if current topping is a Meat object- then it would add size-based pricing.
+            else if (topping instanceof Meat) {
+
+                switch (size){
+                    case 4:
+                        basePrice += 1.00;
+                        break;
+
+                    case 8:
+                        basePrice += 2.00;
+                        break;
+
+                    case 12:
+                        basePrice += 3.00;
+                        break;
+
+            }
+        }
+            else {
                 basePrice += topping.getPrice();
             }
         }

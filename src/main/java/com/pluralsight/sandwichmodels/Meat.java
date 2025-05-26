@@ -7,7 +7,7 @@ public class Meat extends PremiumTopping{
 
     @Override
     public double getPrice() {
-        //Price will be determined in Sandwich class based on sandwich size.
+        //Price is determined in Sandwich class based on sandwich size.
         return 0;
     }
 }
