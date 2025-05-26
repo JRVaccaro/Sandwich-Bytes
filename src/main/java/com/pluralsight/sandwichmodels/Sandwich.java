@@ -89,47 +89,65 @@ public class Sandwich extends Item {
                 throw new IllegalStateException("Invalid sandwich size.");
 
         }
-                //Add extra cost if sandwich has extra cheese
-                if (hasExtraCheese) {
+        //Add extra cost if sandwich has extra cheese
+        if (hasExtraCheese) {
 
 
-                    switch (size) {
-                        case 4:
-                            basePrice += 0.30;
-                            break;
+            switch (size) {
+                case 4:
+                    basePrice += 0.30;
+                    break;
 
-                        case 8:
-                            basePrice += 0.60;
-                            break;
+                case 8:
+                    basePrice += 0.60;
+                    break;
 
-                        case 12:
-                            basePrice += 0.90;
-                            break;
-                    }
+                case 12:
+                    basePrice += 0.90;
+                    break;
+            }
 
-                }
-                //Add extra cost if sandwich has extra meat
-                if (hasExtraMeat) {
-
-                    switch (size) {
-                        case 4:
-                            basePrice += 0.50;
-                            break;
-
-                        case 8:
-                            basePrice += 1.00;
-                            break;
-
-                        case 12:
-                            basePrice += 1.50;
-                            break;
-                    }
-                }
-                //Adds the prices of all other toppings that are in the sandwich
-                for (Toppings topping: toppings){
-                    basePrice += topping.getPrice();
-                }
-                return basePrice;
         }
+        //Add extra cost if sandwich has extra meat
+        if (hasExtraMeat) {
+
+            switch (size) {
+                case 4:
+                    basePrice += 0.50;
+                    break;
+
+                case 8:
+                    basePrice += 1.00;
+                    break;
+
+                case 12:
+                    basePrice += 1.50;
+                    break;
+            }
+        }
+        //Adds the prices of all other toppings that are in the sandwich
+        for (Toppings topping : toppings) {
+
+            //Checking if current topping is a Cheese object- then it would add size-based pricing
+            if (topping instanceof Cheese) {
+
+                switch (size) {
+                    case 4:
+                        basePrice += 0.75;
+                        break;
+
+                    case 8:
+                        basePrice += 1.50;
+                        break;
+
+                    case 12:
+                        basePrice += 2.25;
+                }
+            } else {
+                basePrice += topping.getPrice();
+            }
+        }
+                return basePrice;
+            }
 
     }
