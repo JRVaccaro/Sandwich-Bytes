@@ -23,6 +23,6 @@ public class Chips extends Item{
     }
     @Override
     public String toString(){
-        return String.format("Chips" , flavor, getPrice());
+        return String.format("Chips: " , flavor, getPrice());
     }
 }

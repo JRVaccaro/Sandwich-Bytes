@@ -50,4 +50,9 @@ public class Drink extends Item{
 
         return basePrice;
     }
+
+    @Override
+    public String toString() {
+        return String.format("Drink: ", size, flavor, getPrice());
+    }
 }

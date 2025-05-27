@@ -170,4 +170,21 @@ public class Sandwich extends Item {
                 return basePrice;
             }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Sandwich Size: ").append(size).append(" Bread: ").append(bread.getType()).append("Toasted: ").append(isToasted ? "Yes" : "No")
+                .append("Extra Cheese: ").append(hasExtraCheese ? "Yes" : "No").append("Extra Meat: ").append(hasExtraMeat ? "Yes" : "No").append("Toppings: ");
+
+        if (toppings.isEmpty()){
+            sb.append("No toppings");
+
+        } else {
+            for (Toppings topping : toppings){
+                sb.append(topping.getType());
+            }
+        }
+
+        return sb.toString();
     }
+}
