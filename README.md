@@ -70,7 +70,9 @@ Follow these steps to get your application running within IntelliJ IDEA:
 - [Ray Maroun's GitHub](https://github.com/RayMaroun) – for code examples and guidance throughout the project.
 - [Potato Sensei GPT](https://chatgpt.com/g/g-681d378b0c90819197b16e49abe384ec-potato-sensei) For help understanding Java concepts and getting guidance on my code.
 - [Oracle Java User Interface Guide](https://www.oracle.com/java/technologies/jpl1-building-userinterface.html) – Helped me understand how to structure and build the user interface for my Java console app
+- [Stackify – The Ultimate Guide to Java 8 Streams](https://stackify.com/streams-guide-java-8/) – Helped me understand and apply Java  Stream concepts in my project.
 ## Team Members
+
 
 - **Julianna Vaccaro** -Developed this project as part of Java programming course to practice file handling, user input, and menu-driven applications.
 

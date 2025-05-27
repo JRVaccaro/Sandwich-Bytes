@@ -1,21 +1,12 @@
 package com.pluralsight.sandwichmodels;
 
 public class Chips extends Item{
-    private String size;
     private String flavor;
 
-    public Chips(String size, String flavor) {
-        this.size = size;
+    public Chips(String flavor) {
         this.flavor = flavor;
     }
 
-    public String getSize() {
-        return size;
-    }
-
-    public void setSize(String size) {
-        this.size = size;
-    }
 
     public String getFlavor() {
         return flavor;
@@ -29,5 +20,9 @@ public class Chips extends Item{
     public double getPrice() {
     return 1.50;
 
+    }
+    @Override
+    public String toString(){
+        return String.format("Chips" , flavor, getPrice());
     }
 }
