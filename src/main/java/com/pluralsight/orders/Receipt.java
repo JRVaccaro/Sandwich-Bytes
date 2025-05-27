@@ -16,6 +16,7 @@ private LocalDateTime timestamp;
         this.order = order;
         this.timestamp = LocalDateTime.now();
     }
+    //Generates a formatted receipt text which has items, their prices, and total.
     public String generateReceiptText() {
         StringBuilder sb = new StringBuilder();
 
@@ -33,13 +34,16 @@ private LocalDateTime timestamp;
             total += item.getPrice();
 
         }
+        //Appending total amount to receipt
         sb.append("Total: $").append(String.format("%.2f", total));
         return sb.toString();
     }
+    //Saving receipt to a file inside receipts folder
     public void saveReceiptToFile(){
         DateTimeFormatter fileFormatter = DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss");
         String filename = "receipts/" + timestamp.format(fileFormatter) + ".txt";
         try {
+            //Writing the receipt txt to file
             FileWriter writer = new FileWriter(filename);
             writer.write(generateReceiptText());
             writer.close();
