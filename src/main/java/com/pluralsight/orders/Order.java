@@ -9,6 +9,7 @@ public class Order {
     //List which stores all items, (sandwiches, drinks, chips)
     private List<Item> items;
 
+    //Constructor
     public Order() {
         //start with an empty order
         this.items = new ArrayList<>();
