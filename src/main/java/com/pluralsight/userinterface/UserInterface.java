@@ -3,7 +3,10 @@ package com.pluralsight.userinterface;
 import com.pluralsight.orders.Order;
 import com.pluralsight.sandwichmodels.Bread;
 import com.pluralsight.sandwichmodels.Sandwich;
+import com.pluralsight.sandwichmodels.Toppings;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class UserInterface {
@@ -88,8 +91,10 @@ public class UserInterface {
     }
 
     private void addNewSandwich(){
+
         Bread bread = promptForBread();
         int size = promptForSize();
+        List<Toppings> toppings = promptForToppings();
     }
     private Bread promptForBread() {
         while (true) {
@@ -150,5 +155,10 @@ public class UserInterface {
 
             }
         }
+}
+private List<Toppings> promptForToppings(){
+    List<Toppings> toppings = new ArrayList<>();
+
+    System.out.println("--- Toppings Selection ---");
 }
 }
