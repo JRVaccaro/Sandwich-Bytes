@@ -69,7 +69,7 @@ public class UserInterface {
                     break;
 
                 case "3":
-                    //call to method Chips
+                    addNewChips();
                     break;
 
                 case "4":
@@ -527,6 +527,38 @@ public class UserInterface {
             }
         }
 
+    }
+    private void addNewChips(){
+        String flavor = promptForChipsFlavor();
+        Chips chips = new Chips(flavor);
+        order.addItem(chips);
+        System.out.println("Chips has been added to your order.");
+    }
+    //Helper method
+    private String promptForChipsFlavor(){
+        while (true){
+            System.out.println("--- Choose a chips flavor ---");
+            System.out.println("1) Potato");
+            System.out.println("2) BBQ");
+            System.out.println("3) Spicy");
+
+            String choice = scanner.nextLine().trim();
+
+            switch (choice){
+                case "1":
+                    return "Potato";
+
+                case "2":
+                    return "BBQ";
+
+                case "3":
+                    return "Spicy";
+
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+
+        }
     }
 
 
