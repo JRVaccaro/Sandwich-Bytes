@@ -49,11 +49,12 @@ public class UserInterface {
 
         while (ordering) {
 
-            System.out.println("Order Menu:");
-            System.out.println("1) Add Sandwich");
+            System.out.println("--- Order Menu ---");
+            System.out.println("1) Create Sandwich");
             System.out.println("2) Add Drink");
             System.out.println("3) Add Chips");
-            System.out.println("4) CHECKOUT");
+            System.out.println("4) Signature Sandwiches");
+            System.out.println("5) CHECKOUT");
             System.out.println("0) Cancel Order");
 
             System.out.println("Please choose an option: ");
@@ -74,6 +75,10 @@ public class UserInterface {
                     break;
 
                 case "4":
+                    displaySignatureSandwiches();
+                    break;
+
+                case "5":
                     checkout();
                     break;
 
@@ -529,15 +534,17 @@ public class UserInterface {
         }
 
     }
-    private void addNewChips(){
+
+    private void addNewChips() {
         String flavor = promptForChipsFlavor();
         Chips chips = new Chips(flavor);
         order.addItem(chips);
         System.out.println("Chips has been added to your order.");
     }
+
     //Helper method
-    private String promptForChipsFlavor(){
-        while (true){
+    private String promptForChipsFlavor() {
+        while (true) {
             System.out.println("--- Choose a chips flavor ---");
             System.out.println("1) Potato");
             System.out.println("2) BBQ");
@@ -545,7 +552,7 @@ public class UserInterface {
 
             String choice = scanner.nextLine().trim();
 
-            switch (choice){
+            switch (choice) {
                 case "1":
                     return "Potato";
 
@@ -561,14 +568,15 @@ public class UserInterface {
 
         }
     }
-    private void checkout(){
-        if (order.getItems().isEmpty()){
+
+    private void checkout() {
+        if (order.getItems().isEmpty()) {
             System.out.println("Your order is empty. Please add something before checking out.");
             return;
         }
 
         System.out.println("--- Your Order ---");
-        for (Item item : order.getItems()){
+        for (Item item : order.getItems()) {
             System.out.println(item.toString());
         }
         System.out.printf("Total Price: $%.2f\n", order.getTotalPrice());
@@ -576,7 +584,7 @@ public class UserInterface {
         System.out.println("Confirm Order: (Yes or No)");
         String input = scanner.nextLine().trim();
 
-        if (input.equalsIgnoreCase("yes")){
+        if (input.equalsIgnoreCase("yes")) {
             Receipt receipt = new Receipt(order);
 
             //Show receipt on console
@@ -601,5 +609,31 @@ public class UserInterface {
         }
     }
 
+    private void displaySignatureSandwiches() {
+        System.out.println("--- Signature Sandwiches ---");
+        System.out.println("1) The Knuckle Sandwich");
+        System.out.println("2) //some other special sandwich");
+        System.out.println("0) Return to previous menu");
 
+
+        while (true) {
+            System.out.println("Enter your choice: ");
+            String choice = scanner.nextLine().trim();
+
+            if (choice.equals("0")) {
+                break; //Return to previous menu
+            }
+            switch (choice) {
+                case "1":
+                    break;
+
+                case "2":
+                    break;
+
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        }
+
+    }
 }
