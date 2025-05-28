@@ -114,6 +114,11 @@ public class UserInterface {
         toppings.add(cheese);
         toppings.addAll(extraCheeses);
 
+        //Add sauces to list
+        toppings.addAll(promptForSauces());
+
+        boolean toasted = promptForToasting();
+
     }
 
     private Bread promptForBread() {
@@ -418,4 +423,23 @@ public class UserInterface {
         }
         return toppings;
     }
-}
+
+    private boolean promptForToasting(){
+        while (true){
+            System.out.println("Would you like sandwich toasted? (Yes or No)");
+            String answer = scanner.nextLine().trim();
+
+            if (answer.equalsIgnoreCase("yes")) {
+                return true;
+
+                //if no, exit from loop
+            } else if (answer.equalsIgnoreCase("no")) {
+                return false;
+
+            } else {
+                System.out.println("Invalid choice. Please enter yes or no.");
+            }
+        }
+
+        }
+    }
