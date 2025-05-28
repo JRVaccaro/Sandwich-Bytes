@@ -96,6 +96,11 @@ public class UserInterface {
 
         List<Toppings> toppings = promptForToppings();
         toppings.add(meat);
+
+
+        //If user wants extra meat, add additional meat
+        List<PremiumTopping> extraMeats = promptForAdditionalPremiumMeats();
+        toppings.addAll(extraMeats);
     }
 
     private Bread promptForBread() {
@@ -166,9 +171,10 @@ public class UserInterface {
         System.out.println("--- Toppings Selection ---");
         return toppings;
     }
-    private PremiumTopping promptForPremiumMeat(){
-        while (true){
-            System.out.println("--- Select Main Premium Meat Topping ---" );
+    //Prompts user to select meat topping for sandwich
+    private PremiumTopping promptForPremiumMeat() {
+        while (true) {
+            System.out.println("--- Select Main Premium Meat Topping ---");
             System.out.println("1) Steak");
             System.out.println("2) Ham");
             System.out.println("3) Salami");
@@ -179,7 +185,8 @@ public class UserInterface {
             String choice = scanner.nextLine().trim();
 
 
-            switch (choice){
+            //Return a new meat object based on user choice
+            switch (choice) {
                 case "1":
                     return new Meat("Steak");
 
@@ -202,9 +209,30 @@ public class UserInterface {
                     System.out.println("Invalid choice. Please try again.");
 
 
+            }
+        }
+    }
+                //Prompting user if they want extra meat toppings
+                private List<PremiumTopping> promptForAdditionalPremiumMeats(){
+                List<PremiumTopping> extraMeat = new ArrayList<>();
 
+                while (true){
+                    System.out.println("Would you like to add extra meat? (yes or no)");
+                    String answer = scanner.nextLine().trim();
+
+                    //if yes, reuse meat prompt method and add choice to list
+                    if (answer.equalsIgnoreCase("yes")){
+                        PremiumTopping extra = promptForPremiumMeat();
+                                extraMeat.add(extra);
+                      //if no, exit from loop
+                    } else if (answer.equalsIgnoreCase("no")) {
+                        break;
+
+                    } else {
+                        System.out.println("Invalid choice. Please enter yes or no.");
+                    }
                 }
-
+                return extraMeat;
             }
         }
     }
