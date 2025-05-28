@@ -8,5 +8,7 @@ class BreadTest {
 
     @Test
     void getType() {
+        Bread bread = new Bread("White");
+       assertEquals("White", bread.getType());
     }
 }
