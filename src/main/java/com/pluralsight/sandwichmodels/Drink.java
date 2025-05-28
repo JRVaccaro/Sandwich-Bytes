@@ -53,6 +53,6 @@ public class Drink extends Item{
 
     @Override
     public String toString() {
-        return String.format("Drink: ", size, flavor, getPrice());
+        return String.format("Drink: %s %s ($%.2f)", size, flavor, getPrice());
     }
 }
