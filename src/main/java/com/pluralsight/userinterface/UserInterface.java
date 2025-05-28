@@ -584,7 +584,7 @@ public class UserInterface {
 
             //Save receipt to file
             receipt.saveReceiptToFile();
-            System.out.println("Order has been confirmed.");
+            System.out.println("Order has been confirmed. Returning to previous screen...");
 
             //Clear order after confirmation
             order.clearOrder();
