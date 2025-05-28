@@ -461,7 +461,9 @@ public class UserInterface {
 
     private void addNewDrink() {
         String size = promptForDrinkSize();
-        //this will ask for flavor
+
+        String flavor = promptForDrinkFlavor();
+
 
         Drink drink = new Drink(size, flavor);
         order.addItem(drink);
@@ -469,12 +471,11 @@ public class UserInterface {
 
         System.out.println("Drink has been added to your order.");
     }
-}
 
 
-        private String promptForDrinkSize(){
+    private String promptForDrinkSize() {
 
-        while (true){
+        while (true) {
             System.out.println("--- Choose a drink size ---");
             System.out.println("1) Small");
             System.out.println("2) Medium");
@@ -483,7 +484,7 @@ public class UserInterface {
             String choice = scanner.nextLine().trim();
 
 
-            switch (choice){
+            switch (choice) {
                 case "1":
                     return "Small";
 
@@ -500,5 +501,33 @@ public class UserInterface {
 
             }
         }
+    }
 
+    private String promptForDrinkFlavor() {
+        while (true) {
+            System.out.println("--- Choose a drink flavor ---");
+            System.out.println("1) Water");
+            System.out.println("2) Soda");
+            System.out.println("3) Juice");
+
+            String choice = scanner.nextLine().trim();
+
+            switch (choice) {
+                case "1":
+                    return "Water";
+
+                case "2":
+                    return "Soda";
+
+                case "3":
+                    return "Juice";
+
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
         }
+
+    }
+
+
+}
