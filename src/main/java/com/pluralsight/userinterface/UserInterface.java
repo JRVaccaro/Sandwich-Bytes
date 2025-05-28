@@ -2,16 +2,17 @@ package com.pluralsight.userinterface;
 
 import com.pluralsight.orders.Order;
 import com.pluralsight.sandwichmodels.Bread;
+import com.pluralsight.sandwichmodels.Sandwich;
 
 import java.util.Scanner;
 
 public class UserInterface {
     private Scanner scanner;
     private Order order;
-    private Bread bread;
 
     public UserInterface() {
         scanner = new Scanner(System.in);
+        this.order = new Order();
     }
 
     public void display() {
@@ -59,7 +60,8 @@ public class UserInterface {
             switch (option) {
 
                 case "1":
-                    promptForBread();
+                 Bread bread = promptForBread();
+                   int size = promptForSize();
                     break;
 
                 case "2":
@@ -86,7 +88,7 @@ public class UserInterface {
         }
     }
 
-    public void promptForBread() {
+    public Bread promptForBread() {
         while (true) {
 
             System.out.println("Select your bread type");
@@ -100,24 +102,50 @@ public class UserInterface {
 
             switch (choice) {
                 case "1":
-                    bread = new Bread("White");
-                    return;//Using return to exit from loop
+                    return new Bread("White");
+                    //Using return to exit from loop
 
                 case "2":
-                    bread = new Bread("Wheat");
-                    return;
+                    return new Bread("Wheat");
+
 
                 case "3":
-                    bread = new Bread("Rye");
-                    return;
+                    return new Bread("Rye");
 
                 case "4":
-                    bread = new Bread("Wrap");
-                    return;
+                    return new Bread("Wrap");
 
                 default:
                     System.out.println("Invalid bread choice. Please try again.");
             }
         }
     }
+    //Prompting user to select sandwich size and returns selected size in inches
+    public int promptForSize(){
+        while (true){
+            System.out.println("Select sandwich size:");
+            System.out.println("1) 4 inches");
+            System.out.println("2) 8 inches");
+            System.out.println("3) 12 inches");
+
+            System.out.println("Enter your choice: ");
+            String choice = scanner.nextLine();
+
+            switch (choice){
+                case "1":
+                    return 4;
+
+                case "2":
+                    return 8;
+
+                case "3":
+                    return 12;
+
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+
+
+            }
+        }
+}
 }
