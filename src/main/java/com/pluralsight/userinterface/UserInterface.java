@@ -103,7 +103,6 @@ public class UserInterface {
         List<PremiumTopping> extraCheeses = promptForAdditionalPremiumCheeses();
 
 
-
         //Collects all toppings for sandwich
         List<Toppings> toppings = promptForToppings();
 
@@ -180,12 +179,76 @@ public class UserInterface {
         }
     }
 
+    //Prompt user to select toppings for sandwich
     private List<Toppings> promptForToppings() {
         List<Toppings> toppings = new ArrayList<>();
 
-        System.out.println("--- Toppings Selection ---");
-        return toppings;
-    }
+        System.out.println("--- Regular Toppings Selection ---");
+        System.out.println("1) Lettuce");
+        System.out.println("2) Peppers");
+        System.out.println("3) Onions");
+        System.out.println("4) Tomatoes");
+        System.out.println("5) Jalapenos");
+        System.out.println("6) Cucumbers");
+        System.out.println("7) Pickles");
+        System.out.println("8) Guacamole");
+        System.out.println("9) Mushrooms");
+        System.out.println("0) Done adding toppings");
+
+
+        while (true) {
+            System.out.println("Enter your choice: ");
+            String choice = scanner.nextLine().trim();
+
+            if (choice.equals("0")) {
+                break; //done adding toppings
+            }
+
+            switch (choice) {
+                case "1":
+                    toppings.add(new RegularTopping("Lettuce"));
+                    break;
+
+                case "2":
+                    toppings.add(new RegularTopping("Peppers"));
+                    break;
+
+                case "3":
+                    toppings.add(new RegularTopping("Onions"));
+                    break;
+
+                case "4":
+                    toppings.add(new RegularTopping("Tomatoes"));
+                    break;
+
+                case "5":
+                    toppings.add(new RegularTopping("Jalapenos"));
+                    break;
+
+                case "6":
+                    toppings.add(new RegularTopping("Cucumbers"));
+                    break;
+
+                case "7":
+                    toppings.add(new RegularTopping("Pickles"));
+                    break;
+
+                case "8":
+                    toppings.add(new RegularTopping("Guacamole"));
+                    break;
+
+                case "9":
+                    toppings.add(new RegularTopping("Mushrooms"));
+                    break;
+
+                default:
+                    System.out.println("Invalid choice. Please try again");
+
+            }
+        }
+            return toppings;
+
+        }
 
     //Prompts user to select meat topping for sandwich
     private PremiumTopping promptForPremiumMeat() {
