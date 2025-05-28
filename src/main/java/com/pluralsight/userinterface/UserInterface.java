@@ -171,6 +171,7 @@ public class UserInterface {
         System.out.println("--- Toppings Selection ---");
         return toppings;
     }
+
     //Prompts user to select meat topping for sandwich
     private PremiumTopping promptForPremiumMeat() {
         while (true) {
@@ -212,27 +213,58 @@ public class UserInterface {
             }
         }
     }
-                //Prompting user if they want extra meat toppings
-                private List<PremiumTopping> promptForAdditionalPremiumMeats(){
-                List<PremiumTopping> extraMeat = new ArrayList<>();
 
-                while (true){
-                    System.out.println("Would you like to add extra meat? (yes or no)");
-                    String answer = scanner.nextLine().trim();
+    //Prompting user if they want extra meat toppings
+    private List<PremiumTopping> promptForAdditionalPremiumMeats() {
+        List<PremiumTopping> extraMeat = new ArrayList<>();
 
-                    //if yes, reuse meat prompt method and add choice to list
-                    if (answer.equalsIgnoreCase("yes")){
-                        PremiumTopping extra = promptForPremiumMeat();
-                                extraMeat.add(extra);
-                      //if no, exit from loop
-                    } else if (answer.equalsIgnoreCase("no")) {
-                        break;
+        while (true) {
+            System.out.println("Would you like to add extra meat? (yes or no)");
+            String answer = scanner.nextLine().trim();
 
-                    } else {
-                        System.out.println("Invalid choice. Please enter yes or no.");
-                    }
-                }
-                return extraMeat;
+            //if yes, reuse meat prompt method and add choice to list
+            if (answer.equalsIgnoreCase("yes")) {
+                PremiumTopping extra = promptForPremiumMeat();
+                extraMeat.add(extra);
+                //if no, exit from loop
+            } else if (answer.equalsIgnoreCase("no")) {
+                break;
+
+            } else {
+                System.out.println("Invalid choice. Please enter yes or no.");
+            }
+        }
+        return extraMeat;
+    }
+
+    private PremiumTopping promptForPremiumCheese() {
+
+        while (true) {
+            System.out.println("--- Select Main Premium Cheese Topping ---");
+            System.out.println("1) American");
+            System.out.println("2) Provolone");
+            System.out.println("3) Cheddar");
+            System.out.println("4) Swiss");
+
+            String choice = scanner.nextLine().trim();
+
+            //Return a new cheese object based on user choice
+            switch (choice) {
+                case "1":
+                    return new Cheese("American");
+
+                case "2":
+                    return new Cheese("Provolone");
+
+                case "3":
+                    return new Cheese("Cheddar");
+
+                case "4":
+                    return new Cheese("Swiss");
+
+                default:
+                    System.out.println("Invalid choice. Please try again.");
             }
         }
     }
+}
