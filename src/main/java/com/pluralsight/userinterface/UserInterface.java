@@ -1,9 +1,7 @@
 package com.pluralsight.userinterface;
 
 import com.pluralsight.orders.Order;
-import com.pluralsight.sandwichmodels.Bread;
-import com.pluralsight.sandwichmodels.Sandwich;
-import com.pluralsight.sandwichmodels.Toppings;
+import com.pluralsight.sandwichmodels.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -90,12 +88,16 @@ public class UserInterface {
         }
     }
 
-    private void addNewSandwich(){
+    private void addNewSandwich() {
 
         Bread bread = promptForBread();
         int size = promptForSize();
+        PremiumTopping meat = promptForPremiumMeat();
+
         List<Toppings> toppings = promptForToppings();
+        toppings.add(meat);
     }
+
     private Bread promptForBread() {
         while (true) {
 
@@ -111,7 +113,7 @@ public class UserInterface {
             switch (choice) {
                 case "1":
                     return new Bread("White");
-                    //Using return to exit from loop
+                //Using return to exit from loop
 
                 case "2":
                     return new Bread("Wheat");
@@ -128,9 +130,10 @@ public class UserInterface {
             }
         }
     }
+
     //Prompting user to select sandwich size and returns selected size in inches
-    private int promptForSize(){
-        while (true){
+    private int promptForSize() {
+        while (true) {
             System.out.println("Select sandwich size:");
             System.out.println("1) 4 inches");
             System.out.println("2) 8 inches");
@@ -139,7 +142,7 @@ public class UserInterface {
             System.out.println("Enter your choice: ");
             String choice = scanner.nextLine();
 
-            switch (choice){
+            switch (choice) {
                 case "1":
                     return 4;
 
@@ -155,10 +158,53 @@ public class UserInterface {
 
             }
         }
-}
-private List<Toppings> promptForToppings(){
-    List<Toppings> toppings = new ArrayList<>();
+    }
 
-    System.out.println("--- Toppings Selection ---");
-}
-}
+    private List<Toppings> promptForToppings() {
+        List<Toppings> toppings = new ArrayList<>();
+
+        System.out.println("--- Toppings Selection ---");
+        return toppings;
+    }
+    private PremiumTopping promptForPremiumMeat(){
+        while (true){
+            System.out.println("--- Select Main Premium Meat Topping ---" );
+            System.out.println("1) Steak");
+            System.out.println("2) Ham");
+            System.out.println("3) Salami");
+            System.out.println("4) Roast Beef");
+            System.out.println("5) Chicken");
+            System.out.println("6) Bacon");
+
+            String choice = scanner.nextLine().trim();
+
+
+            switch (choice){
+                case "1":
+                    return new Meat("Steak");
+
+                case "2":
+                    return new Meat("Ham");
+
+                case "3":
+                    return new Meat("Salami");
+
+                case "4":
+                    return new Meat("Roast Beef");
+
+                case "5":
+                    return new Meat("Chicken");
+
+                case "6":
+                    return new Meat("Bacon");
+
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+
+
+
+                }
+
+            }
+        }
+    }
