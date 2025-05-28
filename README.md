@@ -30,6 +30,9 @@
 
 - As a user, I want the option to quit the application so that I can exit the program when I'm finished using it
 
+- As a user, I want to select from a list of signature sandwiches, so that I can pick a specially made option.
+
+- As a user, I want to add or remove toppings on the signature sandwich, so that I can personalize it.
 ## Setup
 **Using the Application**
 You will be prompted to pick from the following:
