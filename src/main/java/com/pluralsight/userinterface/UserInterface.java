@@ -117,7 +117,23 @@ public class UserInterface {
         //Add sauces to list
         toppings.addAll(promptForSauces());
 
+        //Prompt if sandwich should be toasted
         boolean toasted = promptForToasting();
+
+
+        //Checking if extra cheese or meat were added
+        boolean hasExtraCheese = !extraCheeses.isEmpty();
+        boolean hasExtraMeat = !extraMeats.isEmpty();
+
+
+        //Creates new Sandwich object with information
+        Sandwich sandwich = new Sandwich(size, bread, toasted, toppings, hasExtraCheese, hasExtraMeat);
+
+
+        //Add sandwich to current order
+        order.addItem(sandwich);
+
+        System.out.println("Sandwich has been added to your order.");
 
     }
 
