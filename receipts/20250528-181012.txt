@@ -1,0 +1,9 @@
+--- Receipt ---
+2025-05-28 18:10:12Sandwich Size: 8 inch
+Bread: White
+Toasted: No
+Extra Cheese: No
+Extra Meat: No
+Toppings: Onions, Steak, American, Ketchup
+
+Total: $10.50

@@ -26,7 +26,7 @@ private LocalDateTime timestamp;
         //Header
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         sb.append("--- Receipt ---\n");
-        sb.append(timestamp.format(formatter));
+        sb.append("Date: ").append(timestamp.format(formatter)).append("\n\n");
 
         //Listing items and prices
         for (Item item : order.getItems()) {
@@ -35,7 +35,11 @@ private LocalDateTime timestamp;
 
         }
         //Appending total amount to receipt
-        sb.append("Total: $").append(String.format("%.2f", total));
+        sb.append("\nTotal: $").append(String.format("%.2f", total)).append("\n");
+
+        sb.append("\nThanks for biting into something great at Sandwich Bytes!\n");
+        sb.append("See you next crunch!\n");
+        sb.append("-----------------------\n");
         return sb.toString();
     }
     //Saving receipt to a file inside receipts folder

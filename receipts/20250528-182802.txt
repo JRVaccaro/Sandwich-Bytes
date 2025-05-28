@@ -1,0 +1,16 @@
+--- Receipt ---
+Date: 2025-05-28 18:28:02
+
+Sandwich Size: 8 inch
+Bread: Wrap
+Toasted: Yes
+Extra Cheese: Yes
+Extra Meat: Yes
+Toppings: Tomatoes, Peppers, Salami, Salami, Provolone, Cheddar, Ranch
+
+
+Total: $15.60
+
+Thanks for biting into something great at Sandwich Bytes!
+See you next crunch!
+-----------------------

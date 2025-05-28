@@ -174,7 +174,7 @@ public class Sandwich extends Item {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Sandwich Size: ").append(size).append("\n")
+        sb.append("Sandwich Size: ").append(size).append(" inch").append("\n")
                 .append("Bread: ").append(bread.getType()).append("\n")
                 .append("Toasted: ").append(isToasted ? "Yes" : "No").append("\n")
                 .append("Extra Cheese: ").append(hasExtraCheese ? "Yes" : "No").append("\n")
