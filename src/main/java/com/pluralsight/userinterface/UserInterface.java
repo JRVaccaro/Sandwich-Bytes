@@ -60,8 +60,7 @@ public class UserInterface {
             switch (option) {
 
                 case "1":
-                 Bread bread = promptForBread();
-                   int size = promptForSize();
+                    addNewSandwich();
                     break;
 
                 case "2":
@@ -88,7 +87,11 @@ public class UserInterface {
         }
     }
 
-    public Bread promptForBread() {
+    private void addNewSandwich(){
+        Bread bread = promptForBread();
+        int size = promptForSize();
+    }
+    private Bread promptForBread() {
         while (true) {
 
             System.out.println("Select your bread type");
@@ -121,7 +124,7 @@ public class UserInterface {
         }
     }
     //Prompting user to select sandwich size and returns selected size in inches
-    public int promptForSize(){
+    private int promptForSize(){
         while (true){
             System.out.println("Select sandwich size:");
             System.out.println("1) 4 inches");
