@@ -173,17 +173,22 @@ public class Sandwich extends Item {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Sandwich Size: ").append(size).append(" Bread: ").append(bread.getType()).append("Toasted: ").append(isToasted ? "Yes" : "No")
-                .append("Extra Cheese: ").append(hasExtraCheese ? "Yes" : "No").append("Extra Meat: ").append(hasExtraMeat ? "Yes" : "No").append("Toppings: ");
+        sb.append("Sandwich Size: ").append(size).append("\n")
+                .append(" Bread: ").append(bread.getType()).append("\n")
+                .append("Toasted: ").append(isToasted ? "Yes" : "No").append("\n")
+                .append("Extra Cheese: ").append(hasExtraCheese ? "Yes" : "No").append("\n")
+                .append("Extra Meat: ").append(hasExtraMeat ? "Yes" : "No").append("\n")
+                .append("Toppings: ");
 
         if (toppings.isEmpty()){
             sb.append("No toppings");
 
         } else {
             for (Toppings topping : toppings){
-                sb.append(topping.getType());
+                sb.append(topping.getType()).append(" ");
             }
         }
+        sb.append("\n");
 
         return sb.toString();
     }
