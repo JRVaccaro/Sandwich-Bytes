@@ -89,18 +89,32 @@ public class UserInterface {
     }
 
     private void addNewSandwich() {
-
+        //Prompt user to select bread type
         Bread bread = promptForBread();
+        //Prompt user to select sandwich size
         int size = promptForSize();
+
+        //Prompt user for main meat and any extra meat
         PremiumTopping meat = promptForPremiumMeat();
-
-        List<Toppings> toppings = promptForToppings();
-        toppings.add(meat);
-
-
-        //If user wants extra meat, add additional meat
         List<PremiumTopping> extraMeats = promptForAdditionalPremiumMeats();
+
+        //Prompt user for main cheese and any extra cheeses
+        PremiumTopping cheese = promptForPremiumCheese();
+        List<PremiumTopping> extraCheeses = promptForAdditionalPremiumCheeses();
+
+
+
+        //Collects all toppings for sandwich
+        List<Toppings> toppings = promptForToppings();
+
+        //Add main and any extra meat to list
+        toppings.add(meat);
         toppings.addAll(extraMeats);
+
+        //Add main and any extra cheese to list
+        toppings.add(cheese);
+        toppings.addAll(extraCheeses);
+
     }
 
     private Bread promptForBread() {
@@ -115,10 +129,11 @@ public class UserInterface {
             System.out.println("Enter your choice: ");
             String choice = scanner.nextLine();
 
+            //Return a new bread object based on user choice
             switch (choice) {
                 case "1":
                     return new Bread("White");
-                //Using return to exit from loop
+
 
                 case "2":
                     return new Bread("Wheat");
@@ -267,4 +282,26 @@ public class UserInterface {
             }
         }
     }
-}
+    //Prompting user if they want extra cheese
+    private List<PremiumTopping> promptForAdditionalPremiumCheeses(){
+        List<PremiumTopping> extraCheese = new ArrayList<>();
+        while (true) {
+            System.out.println("Would you like to add extra cheese? (yes or no)");
+            String answer = scanner.nextLine().trim();
+
+            //if yes, reuse cheese prompt method and add choice to list
+            if (answer.equalsIgnoreCase("yes")) {
+                PremiumTopping extra = promptForPremiumCheese();
+                extraCheese.add(extra);
+                //if no, exit from loop
+            } else if (answer.equalsIgnoreCase("no")) {
+                break;
+
+            } else {
+                System.out.println("Invalid choice. Please enter yes or no.");
+            }
+        }
+        return extraCheese;
+    }
+
+    }
