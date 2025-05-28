@@ -562,6 +562,11 @@ public class UserInterface {
         }
     }
     private void checkout(){
+        if (order.getItems().isEmpty()){
+            System.out.println("Your order is empty. Please add something before checking out.");
+            return;
+        }
+
         System.out.println("--- Your Order ---");
         for (Item item : order.getItems()){
             System.out.println(item.toString());
