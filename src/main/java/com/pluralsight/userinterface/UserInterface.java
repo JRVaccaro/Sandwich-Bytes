@@ -246,9 +246,9 @@ public class UserInterface {
 
             }
         }
-            return toppings;
+        return toppings;
 
-        }
+    }
 
     //Prompts user to select meat topping for sandwich
     private PremiumTopping promptForPremiumMeat() {
@@ -345,8 +345,9 @@ public class UserInterface {
             }
         }
     }
+
     //Prompting user if they want extra cheese
-    private List<PremiumTopping> promptForAdditionalPremiumCheeses(){
+    private List<PremiumTopping> promptForAdditionalPremiumCheeses() {
         List<PremiumTopping> extraCheese = new ArrayList<>();
         while (true) {
             System.out.println("Would you like to add extra cheese? (yes or no)");
@@ -367,4 +368,54 @@ public class UserInterface {
         return extraCheese;
     }
 
+    private List<Toppings> promptForSauces() {
+        List<Toppings> toppings = new ArrayList<>();
+        System.out.println("--- Sauce Selection ---");
+        System.out.println("1) Mayo");
+        System.out.println("2) Mustard");
+        System.out.println("3) Ketchup");
+        System.out.println("4) Ranch");
+        System.out.println("5) Thousand Islands Sauce");
+        System.out.println("6) Vinaigrette");
+        System.out.println("0) Done adding sauces");
+
+        while (true) {
+            System.out.println("Enter your choice: ");
+            String choice = scanner.nextLine().trim();
+
+            if (choice.equals("0")) {
+                break; //done adding sauces
+
+            }
+            switch (choice) {
+                case "1":
+                    toppings.add(new Sauce("Mayo"));
+                    break;
+
+                case "2":
+                    toppings.add(new Sauce("Mustard"));
+                    break;
+
+                case "3":
+                    toppings.add(new Sauce("Ketchup"));
+                    break;
+
+                case "4":
+                    toppings.add(new Sauce("Ranch"));
+                    break;
+
+                case "5":
+                    toppings.add(new Sauce("Thousand Islands Sauce"));
+                    break;
+
+                case "6":
+                    toppings.add(new Sauce("Vinaigrette"));
+                    break;
+
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        }
+        return toppings;
     }
+}
