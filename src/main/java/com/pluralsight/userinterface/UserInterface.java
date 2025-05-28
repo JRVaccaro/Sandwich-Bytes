@@ -65,15 +65,15 @@ public class UserInterface {
                     break;
 
                 case "2":
-                    //call to method
+                    addNewDrink();
                     break;
 
                 case "3":
-                    //call to method
+                    //call to method Chips
                     break;
 
                 case "4":
-                    //call to method
+                    //call to method Check out
                     break;
 
                 case "0":
@@ -440,8 +440,8 @@ public class UserInterface {
         return toppings;
     }
 
-    private boolean promptForToasting(){
-        while (true){
+    private boolean promptForToasting() {
+        while (true) {
             System.out.println("Would you like sandwich toasted? (Yes or No)");
             String answer = scanner.nextLine().trim();
 
@@ -457,5 +457,48 @@ public class UserInterface {
             }
         }
 
-        }
     }
+
+    private void addNewDrink() {
+        String size = promptForDrinkSize();
+        //this will ask for flavor
+
+        Drink drink = new Drink(size, flavor);
+        order.addItem(drink);
+
+
+        System.out.println("Drink has been added to your order.");
+    }
+}
+
+
+        private String promptForDrinkSize(){
+
+        while (true){
+            System.out.println("--- Choose a drink size ---");
+            System.out.println("1) Small");
+            System.out.println("2) Medium");
+            System.out.println("3) Large");
+
+            String choice = scanner.nextLine().trim();
+
+
+            switch (choice){
+                case "1":
+                    return "Small";
+
+                case "2":
+                    return "Medium";
+
+
+                case "3":
+                    return "Large";
+
+
+                default:
+                    System.out.println("Invalid choice. Please try again");
+
+            }
+        }
+
+        }
