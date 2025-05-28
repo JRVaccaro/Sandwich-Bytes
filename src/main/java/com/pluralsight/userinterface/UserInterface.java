@@ -1,6 +1,7 @@
 package com.pluralsight.userinterface;
 
 import com.pluralsight.orders.Order;
+import com.pluralsight.orders.Receipt;
 import com.pluralsight.sandwichmodels.*;
 
 import java.util.ArrayList;
@@ -73,7 +74,7 @@ public class UserInterface {
                     break;
 
                 case "4":
-                    //call to method Check out
+                    checkout();
                     break;
 
                 case "0":
@@ -557,6 +558,40 @@ public class UserInterface {
                 default:
                     System.out.println("Invalid choice. Please try again.");
             }
+
+        }
+    }
+    private void checkout(){
+        System.out.println("--- Your Order ---");
+        for (Item item : order.getItems()){
+            System.out.println(item.toString());
+        }
+        System.out.printf("Total Price: $.2f\n", order.getTotalPrice());
+
+        System.out.println("Confirm Order: (Yes or No)");
+        String input = scanner.nextLine().trim();
+
+        if (input.equalsIgnoreCase("yes")){
+            Receipt receipt = new Receipt(order);
+
+            //Show receipt on console
+            System.out.println(receipt.generateReceiptText());
+
+            //Save receipt to file
+            receipt.saveReceiptToFile();
+            System.out.println("Order has been confirmed.");
+
+            //Clear order after confirmation
+            order.clearOrder();
+        } else if (input.equalsIgnoreCase("no")) {
+
+            //Cancel order
+            order.clearOrder();
+            System.out.println("Order has been canceled");
+
+
+        } else {
+            System.out.println("Invalid input. Please enter Yes or No.");
 
         }
     }
