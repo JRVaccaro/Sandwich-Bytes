@@ -1,6 +1,7 @@
 package com.pluralsight.sandwichmodels;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Sandwich extends Item {
     private int size;
@@ -184,10 +185,18 @@ public class Sandwich extends Item {
             sb.append("No toppings");
 
         } else {
-            for (Toppings topping : toppings){
-                sb.append(topping.getType()).append(" ");
+
+            //If there are toppings, join their types into a string separated by commas
+            String toppingsJoining = toppings.stream()
+                    //convert each Toppings object to its type string
+                    .map(Toppings ::getType)
+                    // Join all topping type strings with delimiter ", " as separator
+                    .collect(Collectors.joining(", "));
+
+            sb.append(toppingsJoining);
+
+
             }
-        }
         sb.append("\n");
 
         return sb.toString();

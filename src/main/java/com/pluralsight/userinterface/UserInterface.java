@@ -571,7 +571,7 @@ public class UserInterface {
         for (Item item : order.getItems()){
             System.out.println(item.toString());
         }
-        System.out.printf("Total Price: $.2f\n", order.getTotalPrice());
+        System.out.printf("Total Price: $%.2f\n", order.getTotalPrice());
 
         System.out.println("Confirm Order: (Yes or No)");
         String input = scanner.nextLine().trim();
