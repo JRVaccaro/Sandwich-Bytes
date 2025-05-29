@@ -651,7 +651,8 @@ public class UserInterface {
             String answer = scanner.nextLine().trim();
 
             if (answer.equalsIgnoreCase("yes")) {
-                //add code here for customizable sandwich?
+                customizeSignatureSandwich(signatureSandwich);
+                System.out.println("Customized Knuckle Sandwich added to your order.\n");
                 break;
 
             } else if
@@ -665,5 +666,26 @@ public class UserInterface {
                 System.out.println("Invalid response. Please enter (Yes or No).");
             }
         }
+    }
+    private void customizeSignatureSandwich(Sandwich sandwich){
+        while (true){
+            System.out.println("\nCurrent toppings");
+            for (Toppings topping : sandwich.getToppings()){
+                System.out.println(topping.getType());
+            }
+            System.out.println("Would you like to remove a topping? Type name or enter '0' to finish");
+            String input = scanner.nextLine().trim();
+
+            if (input.equalsIgnoreCase("0")) {
+                return;
+            }
+                boolean removed = sandwich.removeTopping(input);
+                if (removed){
+                    System.out.println(input + " removed from the sandwich");
+            } else {
+                System.out.println(input + " was not found on this sandwich");
+            }
+        }
+
     }
 }
