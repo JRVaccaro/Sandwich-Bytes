@@ -654,7 +654,7 @@ public class UserInterface {
     private void displaySignatureSandwiches() {
         System.out.println("--- Signature Sandwiches ---");
         System.out.println("1) The Knuckle Sandwich");
-        System.out.println("2) //some other special sandwich");
+        System.out.println("2) The Taternator Sandwich");
         System.out.println("0) Return to previous menu");
 
 
@@ -671,7 +671,8 @@ public class UserInterface {
                     return; //Exit from method and loop; goes back to menu options
 
                 case "2":
-                    break;
+                    addSignatureTaternatorSandwich();
+                    return; //Exit from method and loop; goes back to menu options
 
                 default:
                     System.out.println("Invalid choice. Please try again.");
@@ -755,4 +756,35 @@ public class UserInterface {
             }
 
         }
+    private void addSignatureTaternatorSandwich(){
+        SignatureTaternatorSandwich signatureSandwich = new SignatureTaternatorSandwich();
+
+        System.out.println("---You selected the Taternator Sandwich---");
+        System.out.println("It comes with these toppings:");
+        for (Toppings toppings : signatureSandwich.getToppings()) {
+            System.out.println(toppings.getType());
+        }
+        while (true) {
+            System.out.println("---Would you like to customize it? (Yes or No)---");
+            String answer = scanner.nextLine().trim();
+
+            if (answer.equalsIgnoreCase("yes")) {
+                customizeSignatureSandwich(signatureSandwich);
+                System.out.println("---Customized Taternator Sandwich added to your order---\n");
+                break;
+
+            } else if
+            (answer.equalsIgnoreCase("no")) {
+                order.addItem(signatureSandwich);
+                System.out.println("---Added the Taternator Sandwich to your order---\n");
+
+                break;
+
+            } else {
+                System.out.println("Invalid response. Please enter (Yes or No).");
+            }
+        }
     }
+
+}
+

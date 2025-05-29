@@ -1,0 +1,16 @@
+--- Receipt ---
+Date: 2025-05-29 10:27:36
+
+Sandwich Size: 12 inch
+Bread: Potato bread
+Toasted: Yes
+Extra Cheese: No
+Extra Meat: No
+Toppings: Bacon, Pepper Jack, Tater Tots, Buffalo, Lettuce
+
+
+Total: $14.00
+
+Thanks for biting into something great at Sandwich Bytes!
+See you next crunch!
+-----------------------
