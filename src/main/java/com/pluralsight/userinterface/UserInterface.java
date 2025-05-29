@@ -625,6 +625,7 @@ public class UserInterface {
             }
             switch (choice) {
                 case "1":
+                    addSignatureKnuckleSandwich();
                     break;
 
                 case "2":
@@ -635,5 +636,34 @@ public class UserInterface {
             }
         }
 
+    }
+
+    private void addSignatureKnuckleSandwich() {
+        SignatureKnuckleSandwich signatureSandwich = new SignatureKnuckleSandwich();
+
+        System.out.println("You selected the Knuckle Sandwich.");
+        System.out.println("It comes with these toppings:");
+        for (Toppings toppings : signatureSandwich.getToppings()) {
+            System.out.println(toppings.getType());
+        }
+        while (true) {
+            System.out.println("Would you like to customize it? (Yes or No)");
+            String answer = scanner.nextLine().trim();
+
+            if (answer.equalsIgnoreCase("yes")) {
+                //add code here for customizable sandwich?
+                break;
+
+            } else if
+            (answer.equalsIgnoreCase("no")) {
+                order.addItem(signatureSandwich);
+                System.out.println("Added the Knuckle Sandwich to your order.\n");
+
+                break;
+
+            } else {
+                System.out.println("Invalid response. Please enter (Yes or No).");
+            }
+        }
     }
 }
