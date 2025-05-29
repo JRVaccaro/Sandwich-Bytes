@@ -22,7 +22,7 @@ public class UserInterface {
         boolean exit = false;
         while (!exit) {
 
-            System.out.println("Welcome to Sandwich Bytes!");
+            System.out.println("---Welcome to Sandwich Bytes!---");
             System.out.println("1) New Order");
             System.out.println("0) Exit");
 
@@ -158,17 +158,21 @@ public class UserInterface {
             //Return a new bread object based on user choice
             switch (choice) {
                 case "1":
+                    System.out.println("You have selected white bread.");
                     return new Bread("White");
 
 
                 case "2":
+                    System.out.println("You have selected wheat bread.");
                     return new Bread("Wheat");
 
 
                 case "3":
+                    System.out.println("You have selected rye bread.");
                     return new Bread("Rye");
 
                 case "4":
+                    System.out.println("You have selected wrap bread.");
                     return new Bread("Wrap");
 
                 default:
@@ -190,12 +194,16 @@ public class UserInterface {
 
             switch (choice) {
                 case "1":
+                    System.out.println("You have selected 4 inch sandwich size.");
                     return 4;
 
+
                 case "2":
+                    System.out.println("You have selected 8 inch sandwich size.");
                     return 8;
 
                 case "3":
+                    System.out.println("You have selected 12 inch sandwich size.");
                     return 12;
 
                 default:
@@ -234,38 +242,47 @@ public class UserInterface {
             switch (choice) {
                 case "1":
                     toppings.add(new RegularTopping("Lettuce"));
+                    System.out.println("Lettuce has been added.");
                     break;
 
                 case "2":
                     toppings.add(new RegularTopping("Peppers"));
+                    System.out.println("Peppers has been added.");
                     break;
 
                 case "3":
                     toppings.add(new RegularTopping("Onions"));
+                    System.out.println("Onions has been added.");
                     break;
 
                 case "4":
                     toppings.add(new RegularTopping("Tomatoes"));
+                    System.out.println("Tomatoes has been added.");
                     break;
 
                 case "5":
                     toppings.add(new RegularTopping("Jalapenos"));
+                    System.out.println("Jalapenos has been added.");
                     break;
 
                 case "6":
                     toppings.add(new RegularTopping("Cucumbers"));
+                    System.out.println("Cucumbers has been added.");
                     break;
 
                 case "7":
                     toppings.add(new RegularTopping("Pickles"));
+                    System.out.println("Pickles has been added.");
                     break;
 
                 case "8":
                     toppings.add(new RegularTopping("Guacamole"));
+                    System.out.println("Guacamole has been added.");
                     break;
 
                 case "9":
                     toppings.add(new RegularTopping("Mushrooms"));
+                    System.out.println("Mushrooms has been added.");
                     break;
 
                 default:
@@ -294,21 +311,27 @@ public class UserInterface {
             //Return a new meat object based on user choice
             switch (choice) {
                 case "1":
+                    System.out.println("You have selected steak.");
                     return new Meat("Steak");
 
                 case "2":
+                    System.out.println("You have selected ham.");
                     return new Meat("Ham");
 
                 case "3":
+                    System.out.println("You have selected salami");
                     return new Meat("Salami");
 
                 case "4":
+                    System.out.println("You have selected roast beef.");
                     return new Meat("Roast Beef");
 
                 case "5":
+                    System.out.println("You have selected chicken.");
                     return new Meat("Chicken");
 
                 case "6":
+                    System.out.println("You have selected bacon.");
                     return new Meat("Bacon");
 
                 default:
@@ -356,15 +379,19 @@ public class UserInterface {
             //Return a new cheese object based on user choice
             switch (choice) {
                 case "1":
+                    System.out.println("You have selected american cheese.");
                     return new Cheese("American");
 
                 case "2":
+                    System.out.println("You have selected provolone cheese.");
                     return new Cheese("Provolone");
 
                 case "3":
+                    System.out.println("You have selected cheddar cheese.");
                     return new Cheese("Cheddar");
 
                 case "4":
+                    System.out.println("You have selected swiss cheese.");
                     return new Cheese("Swiss");
 
                 default:
@@ -416,26 +443,32 @@ public class UserInterface {
             }
             switch (choice) {
                 case "1":
+                    System.out.println("You have selected mayo.");
                     toppings.add(new Sauce("Mayo"));
                     break;
 
                 case "2":
+                    System.out.println("You have selected mustard.");
                     toppings.add(new Sauce("Mustard"));
                     break;
 
                 case "3":
+                    System.out.println("You have selected ketchup.");
                     toppings.add(new Sauce("Ketchup"));
                     break;
 
                 case "4":
+                    System.out.println("You have selected ranch.");
                     toppings.add(new Sauce("Ranch"));
                     break;
 
                 case "5":
+                    System.out.println("You have selected Thousand Islands sauce.");
                     toppings.add(new Sauce("Thousand Islands Sauce"));
                     break;
 
                 case "6":
+                    System.out.println("You have selected vinaigrette.");
                     toppings.add(new Sauce("Vinaigrette"));
                     break;
 
@@ -492,13 +525,16 @@ public class UserInterface {
 
             switch (choice) {
                 case "1":
+                    System.out.println("You selected small drink.");
                     return "Small";
 
                 case "2":
+                    System.out.println("You selected medium drink.");
                     return "Medium";
 
 
                 case "3":
+                    System.out.println("You selected large drink.");
                     return "Large";
 
 
@@ -520,12 +556,15 @@ public class UserInterface {
 
             switch (choice) {
                 case "1":
+                    System.out.println("You selected water.");
                     return "Water";
 
                 case "2":
+                    System.out.println("You selected soda.");
                     return "Soda";
 
                 case "3":
+                    System.out.println("You selected juice.");
                     return "Juice";
 
                 default:
@@ -554,12 +593,15 @@ public class UserInterface {
 
             switch (choice) {
                 case "1":
+                    System.out.println("You selected potato chips");
                     return "Potato";
 
                 case "2":
+                    System.out.println("You selected BBQ chips.");
                     return "BBQ";
 
                 case "3":
+                    System.out.println("You selected spicy chips.");
                     return "Spicy";
 
                 default:
@@ -641,24 +683,24 @@ public class UserInterface {
     private void addSignatureKnuckleSandwich() {
         SignatureKnuckleSandwich signatureSandwich = new SignatureKnuckleSandwich();
 
-        System.out.println("You selected the Knuckle Sandwich.");
+        System.out.println("---You selected the Knuckle Sandwich---");
         System.out.println("It comes with these toppings:");
         for (Toppings toppings : signatureSandwich.getToppings()) {
             System.out.println(toppings.getType());
         }
         while (true) {
-            System.out.println("Would you like to customize it? (Yes or No)");
+            System.out.println("---Would you like to customize it? (Yes or No)---");
             String answer = scanner.nextLine().trim();
 
             if (answer.equalsIgnoreCase("yes")) {
                 customizeSignatureSandwich(signatureSandwich);
-                System.out.println("Customized Knuckle Sandwich added to your order.\n");
+                System.out.println("---Customized Knuckle Sandwich added to your order---\n");
                 break;
 
             } else if
             (answer.equalsIgnoreCase("no")) {
                 order.addItem(signatureSandwich);
-                System.out.println("Added the Knuckle Sandwich to your order.\n");
+                System.out.println("---Added the Knuckle Sandwich to your order---\n");
 
                 break;
 
@@ -685,7 +727,7 @@ public class UserInterface {
                 order.addItem(sandwich);
                 break;
             } else if (input.equalsIgnoreCase("1")) {
-                System.out.println("Enter the name of the topping to remove.");
+                System.out.println("---Enter the name of the topping to remove---");
                 String toppingToRemove = scanner.nextLine().trim();
                 boolean removed = sandwich.removeTopping(toppingToRemove);
 
@@ -711,6 +753,6 @@ public class UserInterface {
                 sandwich.addTopping(toppings);
                 System.out.println(toppings.getType() + " added to the sandwich.");
             }
-            
+
         }
     }

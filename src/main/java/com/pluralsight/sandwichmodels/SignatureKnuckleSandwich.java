@@ -13,11 +13,18 @@ public class SignatureKnuckleSandwich  extends Sandwich {
         List<Toppings> toppings = new ArrayList<>();
 
         toppings.add(new Meat("Spicy Salami"));
+        toppings.add(new Meat("Spicy Meatball"));
         toppings.add(new Cheese("Pepper Jack"));
+        toppings.add(new Cheese("Blue Cheese"));
         toppings.add(new Sauce("Sriracha"));
         toppings.add(new RegularTopping("Red Pepper Flakes"));
 
         return toppings;
+    }
+
+    @Override
+    public double getPrice() {
+        return 12.00;
     }
 }
 
