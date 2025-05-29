@@ -1,7 +1,7 @@
 package com.pluralsight.sandwichmodels;
 
 import com.pluralsight.interfaces.Priceable;
-
+//Other classes will extend from it, cannot be directly created as object
 public abstract class Toppings implements Priceable {
     private String type;
 

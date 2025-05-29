@@ -12,6 +12,7 @@ public class Receipt {
 private Order order;
 private LocalDateTime timestamp;
 
+    //Constructor saves the order and sets the current time as timestamp
     public Receipt(Order order) {
         this.order = order;
         this.timestamp = LocalDateTime.now();
@@ -38,12 +39,15 @@ private LocalDateTime timestamp;
         sb.append("\nTotal: $").append(String.format("%.2f", total)).append("\n");
 
         sb.append("\nThanks for biting into something great at Sandwich Bytes!\n");
-        sb.append("See you next crunch!\n");
+        sb.append("See you next crunch!\uD83E\uDD6A\n");
         sb.append("-----------------------\n");
+
+        //Return the final receipt text
         return sb.toString();
     }
     //Saving receipt to a file inside receipts folder
     public void saveReceiptToFile(){
+        //Format filename using date and time
         DateTimeFormatter fileFormatter = DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss");
         String filename = "receipts/" + timestamp.format(fileFormatter) + ".txt";
         try {

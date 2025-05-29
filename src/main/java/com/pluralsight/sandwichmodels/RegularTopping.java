@@ -1,8 +1,9 @@
 package com.pluralsight.sandwichmodels;
 
 public class RegularTopping extends Toppings{
-    public RegularTopping(String type) {
-        super(type);
+
+    public RegularTopping(String type) {//Constructor that sets the type of regular topping
+        super(type); //Calls the constructor in the Toppings superclass
     }
 
     @Override
@@ -12,4 +13,3 @@ public class RegularTopping extends Toppings{
 
     }
 }
-

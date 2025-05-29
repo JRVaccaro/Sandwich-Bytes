@@ -1,8 +1,29 @@
-# SandwichBytes
+# 🥪Sandwich Bytes🥪
 
 ## Description of the Project
 
+Sandwich Bytes is an interactive Java console application that allows users to build and customize sandwich orders easily and intuitively. The application guides users through a clear menu-driven interface where they can:
+Select sandwich sizes and bread types tailored to their preferences.
 
+Users can:
+
+- Pick a sandwich size and bread type
+
+- Add meats, cheeses, sauces, and toppings
+
+- Toast it or keep it fresh
+
+- Add chips and drinks for a full meal
+
+- Review their full order before checkout
+
+- Save a receipt for later
+
+- Even customize signature sandwiches like the Knuckle Sandwich or The Taternator
+
+This project demonstrates core Java concepts such as object-oriented design, inheritance, and interfaces, while providing a real-world, user-friendly ordering experience. It’s a practical tool for practicing clean code principles and building a foundational understanding of interactive console applications.
+
+![SandwichShopClassDiagram (1).png](ClassDiagramFolder/SandwichShopClassDiagram%20%281%29.png)
 
 ## User Stories
 

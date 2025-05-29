@@ -1,0 +1,25 @@
+--- Receipt ---
+Date: 2025-05-29 15:40:49
+
+Sandwich Size: 4 inch
+Bread: White
+Toasted: No
+Extra Cheese: Yes
+Extra Meat: Yes
+Toppings: Lettuce, Peppers, Tomatoes, Steak, Ham, American, Provolone, Mayo
+
+Drink: Small Water ($2.00)
+Chips: Potato ($1.50)
+Sandwich Size: 12 inch
+Bread: Spicy Garlic
+Toasted: Yes
+Extra Cheese: Yes
+Extra Meat: Yes
+Toppings: Spicy Salami, Spicy Meatball, Pepper Jack, Sriracha, Red Pepper Flakes, Lettuce
+
+
+Total: $25.30
+
+Thanks for biting into something great at Sandwich Bytes!
+See you next crunch!🥪
+-----------------------

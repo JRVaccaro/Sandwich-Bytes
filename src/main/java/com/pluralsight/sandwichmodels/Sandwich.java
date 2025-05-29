@@ -116,15 +116,15 @@ public class Sandwich extends Item {
 
 
             switch (size) {
-                case 4:
+                case 4: //4 inch sandwich
                     basePrice += 0.30;
                     break;
 
-                case 8:
+                case 8: //8 inch sandwich
                     basePrice += 0.60;
                     break;
 
-                case 12:
+                case 12: // 12 inch sandwich
                     basePrice += 0.90;
                     break;
             }
@@ -134,15 +134,15 @@ public class Sandwich extends Item {
         if (hasExtraMeat) {
 
             switch (size) {
-                case 4:
+                case 4: //4 inch sandwich
                     basePrice += 0.50;
                     break;
 
-                case 8:
+                case 8: // 8 inch sandwich
                     basePrice += 1.00;
                     break;
 
-                case 12:
+                case 12: //12 inch sandwich
                     basePrice += 1.50;
                     break;
             }
@@ -154,15 +154,15 @@ public class Sandwich extends Item {
             if (topping instanceof Cheese) {
 
                 switch (size) {
-                    case 4:
+                    case 4: // 4 inch sandwich
                         basePrice += 0.75;
                         break;
 
-                    case 8:
+                    case 8: //8 inch sandwich
                         basePrice += 1.50;
                         break;
 
-                    case 12:
+                    case 12: //12 inch sandwich
                         basePrice += 2.25;
                 }
 
@@ -171,11 +171,11 @@ public class Sandwich extends Item {
             else if (topping instanceof Meat) {
 
                 switch (size){
-                    case 4:
+                    case 4: //4 inch sandwich
                         basePrice += 1.00;
                         break;
 
-                    case 8:
+                    case 8: //8 inch sandwich
                         basePrice += 2.00;
                         break;
 
@@ -202,6 +202,7 @@ public class Sandwich extends Item {
                 .append("Extra Meat: ").append(hasExtraMeat ? "Yes" : "No").append("\n")
                 .append("Toppings: ");
 
+        //If the toppings list is empty
         if (toppings.isEmpty()){
             sb.append("No toppings");
 

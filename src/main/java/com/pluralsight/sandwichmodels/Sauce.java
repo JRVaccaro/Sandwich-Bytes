@@ -1,8 +1,9 @@
 package com.pluralsight.sandwichmodels;
 
 public class Sauce extends Toppings{
+    //Constructor that passes the type of sauce to the Topping superclass
     public Sauce(String type) {
-        super(type);
+        super(type); //Calls the constructor in Topping class
     }
 
     @Override

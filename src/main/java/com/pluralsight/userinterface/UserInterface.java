@@ -51,9 +51,9 @@ public class UserInterface {
 
             System.out.println("--- Order Menu ---");
             System.out.println("1) Create Sandwich");
-            System.out.println("2) Add Drink");
+            System.out.println("2) Signature Sandwiches");
             System.out.println("3) Add Chips");
-            System.out.println("4) Signature Sandwiches");
+            System.out.println("4) Add Drink");
             System.out.println("5) CHECKOUT");
             System.out.println("0) Cancel Order");
 
@@ -67,7 +67,7 @@ public class UserInterface {
                     break;
 
                 case "2":
-                    addNewDrink();
+                    displaySignatureSandwiches();
                     break;
 
                 case "3":
@@ -75,7 +75,7 @@ public class UserInterface {
                     break;
 
                 case "4":
-                    displaySignatureSandwiches();
+                    addNewDrink();
                     break;
 
                 case "5":
@@ -232,7 +232,7 @@ public class UserInterface {
 
 
         while (true) {
-            System.out.println("Enter your choice: ");
+            System.out.println("Enter your choices, when done selecting enter '0'");
             String choice = scanner.nextLine().trim();
 
             if (choice.equals("0")) {
@@ -434,7 +434,7 @@ public class UserInterface {
         System.out.println("0) Done adding sauces");
 
         while (true) {
-            System.out.println("Enter your choice: ");
+            System.out.println("Enter your choices, when done selecting enter '0'");
             String choice = scanner.nextLine().trim();
 
             if (choice.equals("0")) {
@@ -499,12 +499,16 @@ public class UserInterface {
     }
 
     private void addNewDrink() {
+        //Asks the user to select drink size
         String size = promptForDrinkSize();
 
+        //Asks user to select drink flavor
         String flavor = promptForDrinkFlavor();
 
-
+        //create a new drink object
         Drink drink = new Drink(size, flavor);
+
+        //Add drink to current order
         order.addItem(drink);
 
 
@@ -522,7 +526,7 @@ public class UserInterface {
 
             String choice = scanner.nextLine().trim();
 
-
+            //Return- sends a value back to where method was called from and stops the method execution.
             switch (choice) {
                 case "1":
                     System.out.println("You selected small drink.");
@@ -554,6 +558,8 @@ public class UserInterface {
 
             String choice = scanner.nextLine().trim();
 
+
+            //Return- sends a value back to where method was called from and stops the method execution.
             switch (choice) {
                 case "1":
                     System.out.println("You selected water.");
@@ -573,11 +579,18 @@ public class UserInterface {
         }
 
     }
-
+    //Method handles adding new chips to current order
     private void addNewChips() {
+
+        //Asks user to select chip flavor
         String flavor = promptForChipsFlavor();
+
+        //Creates a new chips object with selected flavor
         Chips chips = new Chips(flavor);
+
+        //Add chips to current order
         order.addItem(chips);
+
         System.out.println("Chips has been added to your order.");
     }
 
@@ -592,6 +605,7 @@ public class UserInterface {
             String choice = scanner.nextLine().trim();
 
             switch (choice) {
+                //Return- sends a value back to where method was called from and stops the method execution.
                 case "1":
                     System.out.println("You selected potato chips");
                     return "Potato";
@@ -665,6 +679,7 @@ public class UserInterface {
             if (choice.equals("0")) {
                 break; //Return to previous menu
             }
+            //Return- sends a value back to where method was called from and stops the method execution.
             switch (choice) {
                 case "1":
                     addSignatureKnuckleSandwich();
