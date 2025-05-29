@@ -626,7 +626,7 @@ public class UserInterface {
             switch (choice) {
                 case "1":
                     addSignatureKnuckleSandwich();
-                    break;
+                    return; //Exit from method and loop; goes back to menu options
 
                 case "2":
                     break;
@@ -667,25 +667,50 @@ public class UserInterface {
             }
         }
     }
-    private void customizeSignatureSandwich(Sandwich sandwich){
-        while (true){
+
+    private void customizeSignatureSandwich(Sandwich sandwich) {
+        while (true) {
             System.out.println("\nCurrent toppings");
-            for (Toppings topping : sandwich.getToppings()){
+            for (Toppings topping : sandwich.getToppings()) {
                 System.out.println(topping.getType());
             }
-            System.out.println("Would you like to remove a topping? Type name or enter '0' to finish");
+            System.out.println("---Select an option---");
+            System.out.println("1) Remove a topping");
+            System.out.println("2) Add a new topping");
+            System.out.println("0) Done customizing");
+
             String input = scanner.nextLine().trim();
 
             if (input.equalsIgnoreCase("0")) {
-                return;
-            }
-                boolean removed = sandwich.removeTopping(input);
-                if (removed){
-                    System.out.println(input + " removed from the sandwich");
+                order.addItem(sandwich);
+                break;
+            } else if (input.equalsIgnoreCase("1")) {
+                System.out.println("Enter the name of the topping to remove.");
+                String toppingToRemove = scanner.nextLine().trim();
+                boolean removed = sandwich.removeTopping(toppingToRemove);
+
+                if (removed) {
+                    System.out.println(toppingToRemove + " removed from the sandwich");
+                } else {
+                    System.out.println(toppingToRemove + " was not found on this sandwich");
+                }
+            } else if (input.equalsIgnoreCase("2")) {
+                addToppingToSandwich(sandwich);
+
             } else {
-                System.out.println(input + " was not found on this sandwich");
+                System.out.println("Invalid choice. Please try again.");
             }
         }
-
     }
-}
+
+        private void addToppingToSandwich(Sandwich sandwich){
+            System.out.println("---Choose toppings to add---");
+            List<Toppings> newToppings = promptForToppings();
+
+            for (Toppings toppings : newToppings){
+                sandwich.addTopping(toppings);
+                System.out.println(toppings.getType() + " added to the sandwich.");
+            }
+            
+        }
+    }
