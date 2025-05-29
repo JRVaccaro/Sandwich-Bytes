@@ -68,6 +68,27 @@ public class Sandwich extends Item {
         this.hasExtraMeat = hasExtraMeat;
     }
 
+    //Method that adds a new topping to the sandwich's topping list
+    public void addTopping(Toppings topping) {
+        toppings.add(topping);
+    }
+
+    //Method to remove topping from sandwich's topping list by its type
+    public boolean removeTopping(String type) {
+        //Loop through topping list
+        for (int i = 0; i < toppings.size(); i++ ){
+            //checking if current topping type matches user input
+            if (toppings.get(i).getType().equalsIgnoreCase(type)){
+                //remove topping
+                toppings.remove(i);
+
+                 return true;
+    }
+}
+        //if topping not found return false
+        return false;
+                }
+
     @Override
     public double getPrice() {
         double basePrice;
