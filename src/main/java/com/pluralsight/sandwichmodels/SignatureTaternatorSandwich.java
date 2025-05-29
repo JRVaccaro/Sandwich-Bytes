@@ -18,4 +18,9 @@ public class SignatureTaternatorSandwich extends Sandwich{
 
 
     }
+
+    @Override
+    public double getPrice() {
+        return 14.00;
+    }
 }
