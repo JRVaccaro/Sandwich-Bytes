@@ -19,13 +19,11 @@ public class SignatureKnuckleSandwich  extends Sandwich {
         toppings.add(new Sauce("Sriracha"));
         toppings.add(new RegularTopping("Red Pepper Flakes"));
 
+
         return toppings;
     }
 
-    @Override
-    public double getPrice() {
-        return 12.00;
-    }
+
 
     @Override
     public String toString() {

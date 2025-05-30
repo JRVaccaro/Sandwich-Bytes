@@ -1,0 +1,18 @@
+--- Receipt ---
+Date: 2025-05-30 00:35:02
+
+Chips: Potato ($1.50)
+1) Sandwich Size: 12 inch
+Bread: White
+Toasted: No
+Extra Cheese: Yes
+Extra Meat: Yes
+Toppings: Lettuce, Peppers, Onions, Mushrooms, Steak, Salami, Steak, Ham, American, Provolone, Mayo
+
+
+Total: $28.90
+[1m[32m
+Thanks for biting into something great at Sandwich Bytes!
+[0m
+See you next crunch!🥪
+-----------------------
