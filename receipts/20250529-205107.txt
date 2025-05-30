@@ -1,0 +1,26 @@
+--- Receipt ---
+Date: 2025-05-29 20:51:07
+
+1) Sandwich Size: 4 inch
+Bread: White
+Toasted: No
+Extra Cheese: No
+Extra Meat: No
+Toppings: Steak, American
+
+2) Signature Sandwich: Knuckle Sandwich
+Sandwich Size: 12 inch
+Bread: Spicy Garlic
+Toasted: Yes
+Extra Cheese: Yes
+Extra Meat: Yes
+Toppings: Spicy Salami, Spicy Meatball, Pepper Jack, Blue Cheese, Sriracha, Red Pepper Flakes
+
+Chips: Potato ($1.50)
+Drink: Small Water ($2.00)
+
+Total: $22.75
+
+Thanks for biting into something great at Sandwich Bytes!
+See you next crunch!🥪
+-----------------------

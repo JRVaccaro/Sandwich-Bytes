@@ -1,6 +1,7 @@
 package com.pluralsight.orders;
 
 import com.pluralsight.sandwichmodels.Item;
+import com.pluralsight.sandwichmodels.Sandwich;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -30,9 +31,12 @@ private LocalDateTime timestamp;
         sb.append("Date: ").append(timestamp.format(formatter)).append("\n\n");
 
         //Listing items and prices
-        int count = 1;
+        int sandwichCount = 1;
         for (Item item : order.getItems()) {
-            sb.append(count ++).append(") ").append(item.toString()).append("\n");
+            if (item instanceof Sandwich) {
+                sb.append(sandwichCount ++).append(") ");
+            }
+            sb.append(item.toString()).append("\n");
             total += item.getPrice();
 
         }
