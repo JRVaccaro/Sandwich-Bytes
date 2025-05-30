@@ -26,5 +26,10 @@ public class SignatureKnuckleSandwich  extends Sandwich {
     public double getPrice() {
         return 12.00;
     }
+
+    @Override
+    public String toString() {
+        return "Signature Sandwich: Knuckle Sandwich\n" + super.toString();
+    }
 }
 

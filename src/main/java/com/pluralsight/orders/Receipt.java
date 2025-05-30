@@ -30,8 +30,9 @@ private LocalDateTime timestamp;
         sb.append("Date: ").append(timestamp.format(formatter)).append("\n\n");
 
         //Listing items and prices
+        int count = 1;
         for (Item item : order.getItems()) {
-            sb.append(item.toString()).append("\n");
+            sb.append(count ++).append(") ").append(item.toString()).append("\n");
             total += item.getPrice();
 
         }

@@ -55,10 +55,97 @@ This project demonstrates core Java concepts such as object-oriented design, inh
 
 - As a user, I want to add or remove toppings on the signature sandwich, so that I can personalize it.
 ## Setup
-**Using the Application**
-You will be prompted to pick from the following:
+**🧾Using the Application🧾**
+**You will be prompted to pick from the following**
+---Welcome to Sandwich Bytes!---
+1) New Order
+0) Exit
 
+**If you choose to start a new order, you’ll be guided through these menus:**
 
+**Order Menu**
+1) Create Sandwich
+2) Signature Sandwiches
+3) Add Chips
+4) Add Drink
+5) CHECKOUT
+0) Cancel Order
+
+**Sandwich Builder**
+
+**Choose Size**
+1) 4 inches
+2) 8 inches
+3) 12 inches
+
+**Pick Your Bread**
+1) White
+2) Wheat
+3) Rye
+4) Wrap
+
+**Choose Meat**
+1) Steak
+2) Ham
+3) Salami
+4) Roast Beef
+5) Chicken
+6) Bacon
+
+**Pick Cheese**
+1) American
+2) Provolone
+3) Cheddar
+4) Swiss
+
+**Regular Toppings**
+1) Lettuce
+2) Peppers
+3) Onions
+4) Tomatoes
+5) Jalapenos
+6) Cucumbers
+7) Pickles
+8) Guacamole
+9) Mushrooms
+0) Done adding toppings
+
+**Sauces**
+1) Mayo
+2) Mustard
+3) Ketchup
+4) Ranch
+5) Thousand Islands Sauce
+6) Vinaigrette
+0) Done adding sauces
+
+**Select a Signature Sandwich**
+("--- Signature Sandwiches ---");
+1) The Knuckle Sandwich 
+2) The Taternator Sandwich  
+0) Return to previous menu
+
+**Customize Signature Sandwiches**
+1) Remove a topping
+2) Add a new topping
+0) Done customizing
+
+**Chips Menu**
+1) Potato
+2) BBQ
+3) Spicy
+
+**Drink Menu**
+
+**Pick a Size**
+1) Small
+2) Medium
+3) Large
+
+**Pick a Flavor**
+1) Water
+2) Soda
+3) Juice
 
 ### Prerequisites
 
@@ -84,7 +171,10 @@ Follow these steps to get your application running within IntelliJ IDEA:
 
 
 ## Future Work
-
+- Expand with sides like cookies, soups, or desserts.
+- Rate your sandwich’s heat level based on toppings selected.
+- Simulate how long the order would take in a real shop.
+- Generate simple images to show what your sandwich looks like.
 
 
 ## Resources
@@ -95,6 +185,7 @@ Follow these steps to get your application running within IntelliJ IDEA:
 - [Potato Sensei GPT](https://chatgpt.com/g/g-681d378b0c90819197b16e49abe384ec-potato-sensei) For help understanding Java concepts and getting guidance on my code.
 - [Oracle Java User Interface Guide](https://www.oracle.com/java/technologies/jpl1-building-userinterface.html) – Helped me understand how to structure and build the user interface for my Java console app
 - [Stackify – The Ultimate Guide to Java 8 Streams](https://stackify.com/streams-guide-java-8/) – Helped me understand and apply Java  Stream concepts in my project.
+
 ## Team Members
 
 

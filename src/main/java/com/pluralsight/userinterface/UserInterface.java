@@ -667,8 +667,8 @@ public class UserInterface {
 
     private void displaySignatureSandwiches() {
         System.out.println("--- Signature Sandwiches ---");
-        System.out.println("1) The Knuckle Sandwich");
-        System.out.println("2) The Taternator Sandwich");
+        System.out.println("1) The Knuckle Sandwich\uD83D\uDCA5");
+        System.out.println("2) The Taternator Sandwich\uD83E\uDD54");
         System.out.println("0) Return to previous menu");
 
 
