@@ -43,7 +43,12 @@ private LocalDateTime timestamp;
         //Appending total amount to receipt
         sb.append("\nTotal: $").append(String.format("%.2f", total)).append("\n");
 
+        sb.append("\u001B[1m\u001B[32m"); //Green color
+
         sb.append("\nThanks for biting into something great at Sandwich Bytes!\n");
+
+        sb.append("\u001B[0m\n"); // restarts color
+
         sb.append("See you next crunch!\uD83E\uDD6A\n");
         sb.append("-----------------------\n");
 

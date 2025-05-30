@@ -25,6 +25,17 @@ This project demonstrates core Java concepts such as object-oriented design, inh
 
 ![SandwichShopClassDiagram (1).png](ClassDiagramFolder/SandwichShopClassDiagram%20%281%29.png)
 
+
+## Interesting Code Snippet
+
+In the Sandwich class, I use Java Streams to build a readable list of sandwich toppings. Instead of manually looping through each topping and appending commas, I use this stream code:
+
+String toppingsJoining = toppings.stream()
+    .map(Toppings::getType)
+    .collect(Collectors.joining(", "));
+
+sb.append(toppingsJoining);
+
 ## User Stories
 
 - As a user, I want to see a menu with clear options, so that I know what actions I can take and how to navigate the ordering process.
@@ -55,13 +66,12 @@ This project demonstrates core Java concepts such as object-oriented design, inh
 
 - As a user, I want to add or remove toppings on the signature sandwich, so that I can personalize it.
 ## Setup
-**🧾Using the Application🧾**
+**🧾 Using the Application 🧾**
 **You will be prompted to pick from the following**
----Welcome to Sandwich Bytes!---
 1) New Order
 0) Exit
 
-**If you choose to start a new order, you’ll be guided through these menus:**
+**✨If you choose to start a new order, you’ll be guided through these menus:✨**
 
 **Order Menu**
 1) Create Sandwich
@@ -120,7 +130,6 @@ This project demonstrates core Java concepts such as object-oriented design, inh
 0) Done adding sauces
 
 **Select a Signature Sandwich**
-("--- Signature Sandwiches ---");
 1) The Knuckle Sandwich 
 2) The Taternator Sandwich  
 0) Return to previous menu
@@ -152,7 +161,7 @@ This project demonstrates core Java concepts such as object-oriented design, inh
 - IntelliJ IDEA: Ensure you have IntelliJ IDEA installed, which you can download from [here](https://www.jetbrains.com/idea/download/).
 - Java SDK: Make sure Java SDK is installed and configured in IntelliJ.
 
-### Running the Application in IntelliJ
+### 🛠️ Running the Application in IntelliJ 🛠️
 
 Follow these steps to get your application running within IntelliJ IDEA:
 
@@ -169,6 +178,7 @@ Follow these steps to get your application running within IntelliJ IDEA:
 
 ## Demo
 
+![Demo for Capstone 2.gif](Gif%20For%20Demo/Demo%20for%20Capstone%202.gif)
 
 ## Future Work
 - Expand with sides like cookies, soups, or desserts.
@@ -177,7 +187,7 @@ Follow these steps to get your application running within IntelliJ IDEA:
 - Generate simple images to show what your sandwich looks like.
 
 
-## Resources
+## 📝 Resources 📝
 
 - [ChatGPT](https://openai.com/chatgpt) by OpenAI – for assistance with coding guidance, debugging, and understanding Java concepts.
 - [GeeksforGeeks](https://www.geeksforgeeks.org/) – for reference articles and tutorials that helped deepen my understanding of programming topics.

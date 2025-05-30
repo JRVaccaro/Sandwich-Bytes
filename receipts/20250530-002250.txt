@@ -1,0 +1,17 @@
+--- Receipt ---
+Date: 2025-05-30 00:22:50
+
+1) Sandwich Size: 4 inch
+Bread: White
+Toasted: No
+Extra Cheese: No
+Extra Meat: No
+Toppings: Lettuce, Steak, American, Mayo
+
+
+Total: $7.25
+[1m[32m
+Thanks for biting into something great at Sandwich Bytes!
+[0m
+See you next crunch!🥪
+-----------------------
