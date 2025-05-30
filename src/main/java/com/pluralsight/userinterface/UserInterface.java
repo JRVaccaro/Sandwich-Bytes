@@ -579,6 +579,7 @@ public class UserInterface {
         }
 
     }
+
     //Method handles adding new chips to current order
     private void addNewChips() {
 
@@ -753,53 +754,115 @@ public class UserInterface {
                     System.out.println(toppingToRemove + " was not found on this sandwich");
                 }
             } else if (input.equalsIgnoreCase("2")) {
-                addToppingToSandwich(sandwich);
 
-            } else {
-                System.out.println("Invalid choice. Please try again.");
+                while (true) {
+                    System.out.println("---What would you like to add?---");
+                    System.out.println("1) Regular Topping");
+                    System.out.println("2) Sauce");
+                    System.out.println("3) Meat");
+                    System.out.println("4) Cheese");
+                    System.out.println("0) Done Adding");
+
+                    String addSelection = scanner.nextLine().trim();
+
+                    if (addSelection.equalsIgnoreCase("0")) {
+                        break;
+                    }
+                    switch (addSelection) {
+                        case "1":
+                            //   promptForToppings();
+                            addToppingToSandwich(sandwich);
+                            break;
+
+                        case "2":
+                            addSauceToSandwich(sandwich);
+                            break;
+
+                        case "3":
+                            addMeatToSandwich(sandwich);
+                            break;
+
+                        case "4":
+                            addCheeseToSandwich(sandwich);
+                            break;
+
+                        default:
+                            System.out.println("Invalid choice. Please try again.");
+                    }
+
+
+                }
+
             }
         }
     }
 
-        private void addToppingToSandwich(Sandwich sandwich){
-            System.out.println("---Choose toppings to add---");
-            List<Toppings> newToppings = promptForToppings();
+    private void addToppingToSandwich(Sandwich sandwich) {
+        System.out.println("---Choose toppings to add---");
+        List<Toppings> newToppings = promptForToppings();
 
-            for (Toppings toppings : newToppings){
-                sandwich.addTopping(toppings);
-                System.out.println(toppings.getType() + " added to the sandwich.");
-            }
-
+        for (Toppings toppings : newToppings) {
+            sandwich.addTopping(toppings);
+            System.out.println(toppings.getType() + " added to the sandwich.");
         }
-    private void addSignatureTaternatorSandwich(){
-        SignatureTaternatorSandwich signatureSandwich = new SignatureTaternatorSandwich();
 
-        System.out.println("---You selected the Taternator Sandwich---");
-        System.out.println("It comes with these toppings:");
-        for (Toppings toppings : signatureSandwich.getToppings()) {
-            System.out.println(toppings.getType());
-        }
-        while (true) {
-            System.out.println("---Would you like to customize it? (Yes or No)---");
-            String answer = scanner.nextLine().trim();
+    }
 
-            if (answer.equalsIgnoreCase("yes")) {
-                customizeSignatureSandwich(signatureSandwich);
-                System.out.println("---Customized Taternator Sandwich added to your order---\n");
-                break;
+         private void addSauceToSandwich(Sandwich sandwich) {
+        System.out.println("---Choose Sauces to add---");
+        List<Toppings> newSauces = promptForSauces();
 
-            } else if
-            (answer.equalsIgnoreCase("no")) {
-                order.addItem(signatureSandwich);
-                System.out.println("---Added the Taternator Sandwich to your order---\n");
-
-                break;
-
-            } else {
-                System.out.println("Invalid response. Please enter (Yes or No).");
-            }
+        for (Toppings sauce : newSauces) {
+            sandwich.addTopping(sauce);
+            System.out.println(sauce.getType() + " added to the sandwich.");
         }
     }
 
-}
+         private void addMeatToSandwich(Sandwich sandwich) {
+            System.out.println("---Choose meat to add---");
+             PremiumTopping meat = promptForPremiumMeat();
 
+
+                  sandwich.addTopping(meat);
+                     System.out.println(meat.getType() + " added to the sandwich.");
+        }
+
+        private void addCheeseToSandwich(Sandwich sandwich){
+                System.out.println("---Choose cheese to add---");
+                PremiumTopping cheese = promptForPremiumCheese();
+
+                sandwich.addTopping(cheese);
+            System.out.println(cheese.getType() + " added to the sandwich.");
+
+            }
+            private void addSignatureTaternatorSandwich () {
+            SignatureTaternatorSandwich signatureSandwich = new SignatureTaternatorSandwich();
+
+            System.out.println("---You selected the Taternator Sandwich---");
+                    System.out.println("It comes with these toppings:");
+                    for (Toppings toppings : signatureSandwich.getToppings()) {
+                        System.out.println(toppings.getType());
+                    }
+                    while (true) {
+                        System.out.println("---Would you like to customize it? (Yes or No)---");
+                        String answer = scanner.nextLine().trim();
+
+                        if (answer.equalsIgnoreCase("yes")) {
+                            customizeSignatureSandwich(signatureSandwich);
+                            System.out.println("---Customized Taternator Sandwich added to your order---\n");
+                            break;
+
+                        } else if
+                        (answer.equalsIgnoreCase("no")) {
+                            order.addItem(signatureSandwich);
+                            System.out.println("---Added the Taternator Sandwich to your order---\n");
+
+                            break;
+
+                        } else {
+                            System.out.println("Invalid response. Please enter (Yes or No).");
+                        }
+                    }
+                }
+
+            }
